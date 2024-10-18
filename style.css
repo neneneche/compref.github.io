@@ -249,11 +249,10 @@ td a:hover {
 }
 @media (max-width: 600px) {
 	table, th, td {
-		font-size: 1em;
+		font-size: 0.8em;
+		padding 5px;
 	}
-	th, td {
-		width: auto; /* оверрайд фиксированной ширины*/
-	}
+	/* th, td { width: auto; /* оверрайд фиксированной ширины*/ } */
 }
 
 
