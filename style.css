@@ -185,6 +185,7 @@ table {
     margin: 20px auto;
     border-collapse: collapse;
     background-color: #222;
+	table-layout: fixed;
 }
 
 th, td {
