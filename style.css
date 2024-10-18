@@ -118,43 +118,48 @@ footer {
 }
 
 #contentBox {
-            background: #1a1a1a;
-            padding: 15px;
-            border: 3px dashed #76BA1B;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            position: relative; 
-            display: inline-block; 
-            margin: 20px;
-        }
-        #content {
-            color: #e0e0e0; 
-        }
-        #refreshButton {
-            position: absolute;
-            bottom: -10px; 
-            right: -10px; 
-            background-color: #1a1a1a; 
-            border: 3px dashed #76BA1B; 
-            cursor: pointer;
-            color: #76BA1B;
-            font-size: 1.5em;
-            width: 30px;
-            height: 30px; 
-            border-radius: 0 0 0 5px; 
-            outline: none;
-        }
-        #overlay {
-            display: none;
-            position: absolute;
-            top: -25px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #76BA1B;
-            padding: 5px;
-            font-size: 0.8em;
-            border-radius: 3px;
-            white-space: nowrap; /* Для предотвращения переноса */
-        }
-        #refreshButton:hover + #overlay {
-            display: block; /* Показываем оверлей при наведении на кнопку */
-        }
+    background: #1a1a1a;
+    padding: 15px;
+    border: 3px dashed #76BA1B;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#content {
+    color: #e0e0e0;
+}
+
+#refreshButton {
+    position: absolute;
+    bottom: 5px; 
+    right: 5px; 
+    background-color: #1a1a1a;
+    border: 3px dashed #76BA1B;
+    cursor: pointer;
+    color: #76BA1B;
+    font-size: 1.5em;
+    width: 30px;
+    height: 30px;
+    border-radius: 0 0 0 5px;
+    outline: none;
+}
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #76BA1B;
+    padding: 5px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    white-space: nowrap; /* Для предотвращения переноса */
+}
+
+#refreshButton:hover + #overlay {
+    display: block; /* Показываем оверлей при наведении на кнопку */
+}
