@@ -77,7 +77,7 @@
         <li>Bitte installieren Sie ein Antivirenprogramm und aktualisieren Sie regelmäßig Ihr Windows (automatische Einstellungen).</li>
         <li>Wenn Ihr Computer infiziert wird, sind Sie wahrscheinlich vom Netzwerk ausgeschlossen. In diesem Fall wenden Sie sich bitte an das Computerbüro.</li>
         <li>Wir haben ein Upload-Limit von 40 GB in 24 Stunden und 80 GB in 72 Stunden. In DOPPELZIMMER wird dieses Limit mit Ihrem Mitbewohner geteilt!</li>
-        <li>Begrenzen Sie Ihre Upload-Geschwindigkeit auf maximal 200 KB/s (zum Beispiel mit NetBalancer -> Tutorial unter: <a href="http://goo.gl/iuBmeH">http://goo.gl/iuBmeH</a>) oder erlauben Sie keinen Upload, wenn Sie Torrent-Clients, Skype mit Video oder ähnliche P2P-Apps verwenden! Wenn Sie das Limit überschreiten, wird Ihr Internet für 72 Stunden gesperrt! Sie können Ihren Upload unter <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> oder <a href="http://www/">http://www/</a> in Ihrem Konto überprüfen.</li>
+        <li>Begrenzen Sie Ihre Upload-Geschwindigkeit auf maximal 200 KB/s (zum Beispiel mit <a href="netbalancer_guide.docx">NetBalancer</a>) oder erlauben Sie keinen Upload, wenn Sie Torrent-Clients, Skype mit Video oder ähnliche P2P-Apps verwenden! Wenn Sie das Limit überschreiten, wird Ihr Internet für 72 Stunden gesperrt! Sie können Ihren Upload unter <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> oder <a href="http://www/">http://www/</a> in Ihrem Konto überprüfen.</li>
         <li>Das Compref kann Sie im Falle einer Überlastung nicht entsperren!</li>
     </ul>
 
@@ -93,6 +93,39 @@
         <li>E-Mail: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
         <li>Bürozeiten: Regelmäßig an unserer Tür angekündigt oder einfach <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> in Ihrem Browser eingeben.</li>
     </ul>
+	<h2>6. Informationsbeschaffung</h2>
+<ul>
+    <li>Ein Chat in WhatsApp wurde von Studenten für Studenten erfunden. <br />
+        Bitte schließen Sie sich uns an, um Informationen auszutauschen, Dinge zu kaufen, Standorte von Kontrolleuren auszutauschen und andere Aktivitäten nicht zu verpassen :) </li>
+    <button id="showQRCodeBtn">KLICK für den QR-Code</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR-Code" />
+    </div>
+	
+	<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+		<button style="background-color: #8b0000; color: #fff;">KLICK für den Link</button>
+	</a>
+	
+	<!-- qr code js -->
+
+<script>
+	document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+	
+</ul>
 </main>
 
 <footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">

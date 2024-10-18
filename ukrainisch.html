@@ -76,7 +76,7 @@
         <li>Будь ласка, встановіть антивірусне програмне забезпечення та регулярно оновлюйте Windows (автоматичні налаштування).</li>
         <li>Якщо ваш комп'ютер буде заражений вірусами, вас, ймовірно, відключать від мережі. У такому випадку зверніться до комп'ютерного офісу.</li>
         <li>У нас є ліміт на завантаження: 40 ГБ за 24 години і 80 ГБ за 72 години. У ДВОМІСНИХ КІМНАТАХ цей ліміт ділиться з вашим сусідом по кімнаті!</li>
-        <li>Обмежте швидкість завантаження до максимум 200 КБ/с (наприклад, за допомогою NetBalancer -> інструкція за посиланням: <a href="http://goo.gl/iuBmeH">http://goo.gl/iuBmeH</a>) або забороніть завантаження, якщо використовуєте торрент-клієнти, Skype з відео або подібні P2P-додатки! Якщо перевищите ліміт, ваше інтернет-з'єднання буде відключено на 72 години! Ви можете перевірити ваші завантаження на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> або <a href="http://www/">http://www/</a> у вашому акаунті.</li>
+        <li>Обмежте швидкість завантаження до максимум 200 КБ/с (наприклад, за допомогою <a href="netbalancer_guide.docx">NetBalancer</a>) або забороніть завантаження, якщо використовуєте торрент-клієнти, Skype з відео або подібні P2P-додатки! Якщо перевищите ліміт, ваше інтернет-з'єднання буде відключено на 72 години! Ви можете перевірити ваші завантаження на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> або <a href="http://www/">http://www/</a> у вашому акаунті.</li>
         <li>Ми не зможемо вас розблокувати у разі перевищення ліміту!</li>
     </ul>
 
@@ -92,6 +92,40 @@
         <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
         <li>Години роботи: регулярні оголошення на дверях або просто введіть у браузері <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a>.</li>
     </ul>
+	<h2>6. Отримання інформації</h2>
+	<ul>
+		<li>Чат у WhatsApp був придуманий студентами для студентів (хоча не всі ми цей месенджер любимо). <br />
+        Будь ласка, приєднуйтесь для обміну інформацією, покупки речей, обміну локаціями контролерів та інших активностей :) </li>
+		<button id="showQRCodeBtn">ТИК для QR-коду</button>
+		<div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR Код" />
+		</div>
+	
+		<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+			<button style="background-color: #8b0000; color: #fff;">ТИК для посилання</button>
+		</a>
+	
+	<!-- qr code js -->
+
+<script>
+	document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+	
+</ul>
+
 </main>
 
 <footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">

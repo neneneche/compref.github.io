@@ -77,7 +77,7 @@
         <li>Пожалуйста, установите антивирусную программу и регулярно обновляйте вашу Windows (автоматические настройки).</li>
         <li>Если ваш компьютер будет заражен, вы, вероятно, будете отключены от сети. В этом случае свяжитесь с нами.</li>
         <li>У нас есть лимит на загрузку 40 ГБ за 24 часа и 80 ГБ за 72 часа. В ДВУХМЕСТНЫХ КОМНАТАХ этот лимит делится с вашим соседом!</li>
-        <li>Ограничьте вашу скорость загрузки до максимума 200 КБ/с (например, с помощью NetBalancer) или не разрешайте загрузку, если вы используете торрент-клиенты, Skype с видео или аналогичные P2P-приложения! Если вы превысите лимит, ваш интернет будет заблокирован на 72 часа! Вы можете проверить вашу загрузку на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> или <a href="http://www/">http://www/</a> в разделе "Мой аккаунт".</li>
+        <li>Ограничьте вашу скорость загрузки до максимума 200 КБ/с (например, с помощью <a href="netbalancer_guide.docx">NetBalancer</a>) или не разрешайте загрузку, если вы используете торрент-клиенты, Skype с видео или аналогичные P2P-приложения! Если вы превысите лимит, ваш интернет будет заблокирован на 72 часа! Вы можете проверить вашу загрузку на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> или <a href="http://www/">http://www/</a> в разделе "Мой аккаунт".</li>
         <li>Мы не можем разблокировать вас в случае превышения лимита!</li>
     </ul>
 
@@ -92,6 +92,41 @@
     <ul>
         <li>Электронная почта: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
         <li>Часы работы: Регулярно объявляются у нас на двери или просто введите <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> в вашем браузере.</li>
+    </ul>
+	<h2>6. Получение информации</h2>
+    <ul>
+        <li> От студентов для студентов был изобретён чат в WhatsApp(хоть и не все мы его любим). <br />
+		Пожалуйста, присоединяйтесь для обмена информацией, покупок вещей, обмена локацией контроллёров и прочих других активностей :) </li>
+		<button id="showQRCodeBtn">ТЫК для QR кода</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR Код" />
+    </div>
+	
+	<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+		<button style="background-color: #8b0000; color: #fff;">ТЫК для ссылки</button>
+	</a>
+
+<!-- qr code js -->
+
+<script>
+	document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+
+
     </ul>
 </main>
 

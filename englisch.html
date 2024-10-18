@@ -77,7 +77,7 @@
         <li>Please install an antivirus-program and update your windows regularly (automatic settings).</li>
         <li>If your computer gets infected you are likely to be banned from the network. In this case contact the Computer Office.</li>
         <li>We have an upload limit of 40GBs in 24hrs and 80GBs in 72hrs. In DOUBLE ROOMS this limit is shared with your roommate!!</li>
-        <li>Restrict your upload speed to max 200KBs (for example with NetBalancer) or do not allow upload if you’re using torrent clients, Skype with Video or similar p2p apps! If you get over the limit, your internet will be blocked for 72 hours! You can check your upload at <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> or <a href="http://www/">http://www/</a> under My Account.</li>
+        <li>Restrict your upload speed to max 200KBs (for example with <a href="netbalancer_guide.docx">NetBalancer</a>) or do not allow upload if you’re using torrent clients, Skype with Video or similar p2p apps! If you get over the limit, your internet will be blocked for 72 hours! You can check your upload at <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> or <a href="http://www/">http://www/</a> under My Account.</li>
         <li>The computer office can’t unblock you in case of overtraffic!</li>
     </ul>
 
@@ -93,6 +93,39 @@
         <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
         <li>Office hours: Regularly announced at our door or just simply type <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> in your browser.</li>
     </ul>
+	<h2>6. Information Gathering</h2>
+<ul>
+    <li>A chat in WhatsApp was invented by students for students. <br />
+        Please join us to exchange information, buy things, share locations of controllers, and not miss out on other activities :) </li>
+    <button id="showQRCodeBtn">CLICK for the QR Code</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR Code" />
+    </div>
+
+	<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+		<button style="background-color: #8b0000; color: #fff;">CLICK for the link</button>
+	</a>
+
+<!-- qr code js -->
+
+<script>
+	document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+</ul>
 </main>
 
 <footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
