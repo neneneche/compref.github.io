@@ -74,7 +74,18 @@
 		// Функция для показа/скрытия выпадающего списка
         document.getElementById('toggleButton').addEventListener('click', () => {
             const dropdown = document.getElementById('dropdown');
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+            if (dropdown.style.visibility === 'hidden' || dropdown.style.visibility === '') {
+                dropdown.style.visibility = 'visible';
+                dropdown.style.opacity = '1';
+                dropdown.style.height = 'auto'; // Разрешить высоту
+                dropdown.offsetHeight; // Принудительное перерисовывание
+            } else {
+                dropdown.style.opacity = '0';
+                setTimeout(() => {
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.height = '0'; // Устанавливаем высоту в 0
+                }, 300); // Даем время на завершение анимации
+            }
         });
 </script>
 
