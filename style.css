@@ -252,7 +252,15 @@ td a:hover {
 		font-size: 0.8em;
 		padding 5px;
 	}
-	/* th, td { width: auto; /* оверрайд фиксированной ширины*/ } */
+	th, td {
+		width: auto; /* оверрайд фиксированной ширины*/
+	}
+}
+td {
+	word-wrap: break-word;
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 
