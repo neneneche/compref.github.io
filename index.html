@@ -51,7 +51,7 @@
 
                 // Устанавливаем время последнего обновления
                 const updatedAt = new Date(data.updated_at).toLocaleString();
-                document.getElementById('overlay').innerText = `Letzte Aktualisierung: <br /> ${updatedAt}`;
+                document.getElementById('overlay').innerText = `Letzte Aktualisierung: ${updatedAt}`;
             })
             .catch(error => console.error('Fehler:', error));
     </script>
