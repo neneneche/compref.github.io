@@ -168,6 +168,7 @@ footer {
 
 #refreshButton:hover + #overlay {
     display: block; /* Показываем оверлей при наведении на кнопку */
+	right: calc(0% - 16px);
 }
 #outerContentBox{
 
