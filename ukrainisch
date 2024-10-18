@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформаційна панель</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Логотип">
+    <nav>
+        <a href="deutsch.html">Інформація</a>
+        <a href="contacts.html">Посилання</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Мова</option>
+            <option value="index.html">Deutsch</option>
+            <option value="englisch.html">English</option>
+            <option value="russisch.html">Русский</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Інтернет на кампусі Brigittenau</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">завантаження...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- Перевернуті стрілочки -->
+            <div id="overlay">Останнє оновлення: ...</div>
+        </div>
+    </div>
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Помилка мережі: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // Встановлення часу останнього оновлення
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `Останнє оновлення: ${updatedAt}`;
+            })
+            .catch(error => console.error('Помилка:', error));
+    </script>
+
+    <h2>1. Технічні вимоги</h2>
+    <ul>
+        <li>Для прямого підключення вашого ПК/ноутбука до стіни вам потрібен мережевий порт на пристрої та мережевий кабель, який можна придбати в комп'ютерному офісі (довжина 5 м за 4 євро).</li>
+        <li>Пристрої без мережевої карти потребують USB-адаптера для підключення до мережі.</li>
+        <li>У гуртожитку немає загального Wi-Fi! Для підключення по Wi-Fi вам потрібен роутер.</li>
+    </ul>
+
+    <h2>2. Процес реєстрації</h2>
+    <ul>
+        <li>Для реєстрації вашого пристрою (ноутбук, ПК, роутер, Xbox, PS тощо) зверніться до комп'ютерного офісу в робочий час.</li>
+        <li>Якщо ви використовуєте точку доступу та хочете мати другий пристрій онлайн, вам потрібно принести його до Компрефу.</li>
+    </ul>
+
+    <h2>3. Після реєстрації</h2>
+    <ul>
+        <li>Налаштуйте ваш пристрій так, щоб він автоматично отримував IP-адресу (DHCP – це зазвичай стандартні налаштування).</li>
+        <li>Будь ласка, встановіть антивірусне програмне забезпечення та регулярно оновлюйте Windows (автоматичні налаштування).</li>
+        <li>Якщо ваш комп'ютер буде заражений вірусами, вас, ймовірно, відключать від мережі. У такому випадку зверніться до комп'ютерного офісу.</li>
+        <li>У нас є ліміт на завантаження: 40 ГБ за 24 години і 80 ГБ за 72 години. У ДВОМІСНИХ КІМНАТАХ цей ліміт ділиться з вашим сусідом по кімнаті!</li>
+        <li>Обмежте швидкість завантаження до максимум 200 КБ/с (наприклад, за допомогою NetBalancer -> інструкція за посиланням: <a href="http://goo.gl/iuBmeH">http://goo.gl/iuBmeH</a>) або забороніть завантаження, якщо використовуєте торрент-клієнти, Skype з відео або подібні P2P-додатки! Якщо перевищите ліміт, ваше інтернет-з'єднання буде відключено на 72 години! Ви можете перевірити ваші завантаження на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> або <a href="http://www/">http://www/</a> у вашому акаунті.</li>
+        <li>Ми не зможемо вас розблокувати у разі перевищення ліміту!</li>
+    </ul>
+
+    <h2>4. Оплата</h2>
+    <ul>
+        <li>Щомісячна плата за інтернет: 5 євро</li>
+        <li>Оплата ТІЛЬКИ готівкою в нашому офісі (можна оплатити кілька місяців наперед).</li>
+        <li>Оплата здійснюється до 12:00 наступного 5 числа місяця.</li>
+    </ul>
+
+    <h2>5. Контакти</h2>
+    <ul>
+        <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+        <li>Години роботи: регулярні оголошення на дверях або просто введіть у браузері <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a>.</li>
+    </ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">З любов'ю від digga8</p>
+</footer>
+
+</body>
+</html>
