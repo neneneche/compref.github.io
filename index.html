@@ -4,34 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informationspanel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #f8f8f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #logo {
-            width: 100px; 
-            height: auto;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-        .language-select {
-            margin-left: 20px;
-        }
-        main {
-            padding: 20px;
-        }
-    </style>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,13 +24,13 @@
 <main>
     <h1>Internet am Campus Brigittenau</h1>
 
-	 <div id="dropdown" style="display: none;">
-        <div id="content"></div>
+   <div id="contentBox">
+        <div id="content">Загрузка...</div>
+        <button id="refreshButton">&#8595;&#8593;</button> <!-- Перевёрнутые стрелочки -->
+        <div id="overlay"></div>
     </div>
 
-    <button id="toggleButton">Aktuelle Öffnungszeiten</button>
-	
-<script>
+    <script>
         const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
         const url = `https://api.github.com/gists/${gistId}`;
 
@@ -73,21 +45,13 @@
                 const fileName = Object.keys(data.files)[0];
                 const content = data.files[fileName].content;
                 document.getElementById('content').innerText = content;
+
+                // Устанавливаем время последнего обновления
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `Letzte Aktualisierung: ${updatedAt}`;
             })
-            .catch(error => console.error('Ошибка:', error));
-
-        document.getElementById('toggleButton').addEventListener('click', () => {
-            const dropdown = document.getElementById('dropdown');
-            if (dropdown.style.maxHeight) {
-                dropdown.style.maxHeight = null;
-                dropdown.style.opacity = 0;
-            } else {
-                dropdown.style.maxHeight = dropdown.scrollHeight + "px"; 
-                dropdown.style.opacity = 1;
-            }
-        });
-</script>
-
+            .catch(error => console.error('Fehler:', error));
+    </script>
 
     <h2>1. Technische Anforderungen</h2>
     <ul>

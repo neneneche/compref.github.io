@@ -117,29 +117,44 @@ footer {
 	
 }
 
-#dropdown {
+#contentBox {
             background: #1a1a1a;
             padding: 15px;
             border: 3px dashed #76BA1B;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            max-height: 0; /* Начальная высота 0 */
-            overflow: hidden; /* Скрыть переполнение */
-            transition: max-height 0.3s ease, opacity 0.3s ease; /* Плавный переход */
-            opacity: 0; /* Начальная прозрачность */
+            position: relative; 
+            display: inline-block; 
+            margin: 20px;
         }
         #content {
-            color: #e0e0e0; /* Цвет текста */
+            color: #e0e0e0; 
         }
-        #toggleButton {
-            width: 100%; /* Занимает всю ширину */
-            background-color: #76BA1B; /* Цвет фона */
-            color: #000; /* Цвет текста */
-            border: none; /* Без рамки */
-            padding: 10px; /* Отступы */
-            cursor: pointer; /* Курсор указателя */
-            border-radius: 5px; /* Закругленные углы */
-            transition: background-color 0.3s; /* Плавный переход цвета */
+        #refreshButton {
+            position: absolute;
+            bottom: -10px; 
+            right: -10px; 
+            background-color: #1a1a1a; 
+            border: 3px dashed #76BA1B; 
+            cursor: pointer;
+            color: #76BA1B;
+            font-size: 1.5em;
+            width: 30px;
+            height: 30px; 
+            border-radius: 0 0 0 5px; 
+            outline: none;
         }
-        #toggleButton:hover {
-            background-color: #65a71c; /* Цвет при наведении */
+        #overlay {
+            display: none;
+            position: absolute;
+            top: -25px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #76BA1B;
+            padding: 5px;
+            font-size: 0.8em;
+            border-radius: 3px;
+            white-space: nowrap; /* Для предотвращения переноса */
+        }
+        #refreshButton:hover + #overlay {
+            display: block; /* Показываем оверлей при наведении на кнопку */
         }
