@@ -153,25 +153,28 @@ footer {
 	font-weight: bold;
 }
 
+#outerContentBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
 #overlay {
     display: none;
     position: absolute;
-    top: -25px;
-    right: 0px;
+    top: -25%; 
+    left: 50%; 
+    transform: translateX(-50%); 
     background-color: rgba(0, 0, 0, 0.7);
     color: #76BA1B;
     padding: 5px;
     font-size: 1em;
     border-radius: 3px;
-    white-space: nowrap; /* Для предотвращения переноса */
+    white-space: nowrap;
+    z-index: 10; 
 }
 
 #refreshButton:hover + #overlay {
-    display: block; /* Показываем оверлей при наведении на кнопку */
- 
-}
-#outerContentBox{
-	display: flex;
-    	justify-content: center;
-   
+    display: block; 
 }
