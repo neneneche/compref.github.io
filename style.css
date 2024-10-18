@@ -168,8 +168,7 @@ footer {
 
 #refreshButton:hover + #overlay {
     display: block; /* Показываем оверлей при наведении на кнопку */
-    display: flex;
-    justify-content: center;
+ 
 }
 #outerContentBox{
 	display: flex;
