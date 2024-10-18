@@ -92,10 +92,9 @@ a:hover {
     color: #e0e0e0;
 }
 
-/* Центрирование элемента <p> */
 p {
-    text-align: center; /* Центрирование текста */
-    margin: 20px 0; /* Отступы сверху и снизу */
+    text-align: center;
+    margin: 20px 0; 
 }
 
 /* Добавление стиля для кнопок */ 
@@ -118,4 +117,12 @@ footer {
 	
 }
 
-напиши html i js код, который будет подтягивать текст 
+content {
+	background: #1a1a1a;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #76BA1B;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}

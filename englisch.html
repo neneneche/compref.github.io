@@ -43,7 +43,7 @@
         <a href="contacts.html">Links</a>
         <select class="language-select" onchange="location = this.value;">
             <option value="language.html">Language</option>
-            <option value="deutsch.html">Deutsch</option>
+            <option value="index.html">Deutsch</option>
             <option value="russisch.html">Русский</option>
         </select>
     </nav>
@@ -51,6 +51,22 @@
 
 <main>
     <h1>Internet at Campus Brigittenau</h1>
+
+<script>
+    const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+    const url = `https://api.github.com/gists/${gistId}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const fileName = Object.keys(data.files)[0];
+            const content = data.files[fileName].content;
+            document.getElementById('content').innerText = content;
+        })
+        .catch(error => console.error('Ошибка:', error));
+</script>
+
+	<div id="content"></div>
 
     <h2>1. Technical Requirements</h2>
     <ul>
@@ -89,8 +105,9 @@
     </ul>
 </main>
 
-<footer>
-	  <p><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">With ♡ by digga8</p>
 </footer>
 
 </body>
