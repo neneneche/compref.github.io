@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панели иттилоот</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Логотип">
+    <nav>
+        <a href="tadschikisch.html">Инфо</a>
+        <a href="links.html">Пайвандҳо</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Забон</option>
+            <option value="index.html">Deutsch</option>
+            <option value="englisch.html">English</option>
+            <option value="russisch.html">Русский</option>
+            <option value="ukrainisch.html">Українська</option>
+
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Интернет дар Campus Brigittenau</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">боргузорӣ...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- Тирчаҳои баръакс -->
+            <div id="overlay">Охирин навсозӣ: ...</div>
+        </div>
+    </div>
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Хатои шабака: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // Вақти охирин навсозӣ
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `Охирин навсозӣ: ${updatedAt}`;
+            })
+            .catch(error => console.error('Хато:', error));
+    </script>
+
+    <h2>1. Талаботи техникӣ</h2>
+    <ul>
+        <li>Барои пайвасти мустақими компютер ё ноутбуки худ ба девор, ба шумо порти шабакавӣ ва кабели шабакавӣ лозим аст, ки онро аз офиси компютерӣ харидан мумкин аст (дарозии 5 м бо нархи 4 евро).</li>
+        <li>Дастгоҳҳое, ки корти шабакавӣ надоранд, ба адаптери USB-to-LAN ниёз доранд.</li>
+        <li>Дар хобгоҳ Wi-Fi умумӣ нест! Барои Wi-Fi ба шумо роутер лозим аст.</li>
+    </ul>
+
+    <h2>2. Раванди бақайдгирӣ</h2>
+    <ul>
+        <li>Барои бақайдгирии дастгоҳи худ (ноутбук, компютер, роутер, Xbox, PS ва ғайра), бо офиси компютерӣ дар вақти кории он тамос гиред.</li>
+        <li>Агар шумо нуқтаи дастрасӣ (Access Point) истифода мебаред ва мехоҳед дастгоҳи дуюмро онлайн кунед, шумо бояд онро ба офис биёред.</li>
+    </ul>
+
+    <h2>3. Пас аз бақайдгирӣ</h2>
+    <ul>
+        <li>Дастгоҳи худро танзим кунед, то он ба таври худкор IP-суроға гирад (DHCP - ин одатан танзимоти пешфарз аст).</li>
+        <li>Лутфан нармафзори зиддивирус насб кунед ва Windows-и худро мунтазам навсозӣ кунед (танзимоти худкор).</li>
+        <li>Агар компютери шумо вируси дошта бошад, эҳтимолан аз шабака хориҷ мешавед. Дар ин сурат, ба офиси компютерӣ муроҷиат кунед.</li>
+        <li>Мо лимити боргузорӣ дорем: 40 ГБ дар 24 соат ва 80 ГБ дар 72 соат. Дар УТОҚҲОИ ДУНАФАРА ин лимит бо ҳамсояи шумо тақсим мешавад!</li>
+        <li>Суръати боргузории худро то ҳадди аксар 200 КБ/с маҳдуд кунед (масалан, бо истифодаи NetBalancer -> дастур бо пайванд: <a href="http://goo.gl/iuBmeH">http://goo.gl/iuBmeH</a>) ё боргузорӣ кунед, агар шумо мизоҷони torrent, Skype бо видео ё барномаҳои шабеҳи P2P истифода баред! Агар лимитро зиёд кунед, интернети шумо барои 72 соат қатъ хоҳад шуд! Шумо метавонед боргузории худро дар <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> ё <a href="http://www/">http://www/</a> дар ҳисоби худ санҷед.</li>
+        <li>Офиси компютерӣ наметавонад шуморо дар сурати аз ҳад зиёд гузаштани лимит озод кунад!</li>
+    </ul>
+
+    <h2>4. Пардохт</h2>
+    <ul>
+        <li>Ҳаққи ҳармоҳаи интернет: 5 евро</li>
+        <li>Пардохт ТАНҲО бо нақд дар офиси мо (шумо метавонед чанд моҳ пешпардохт кунед).</li>
+        <li>Пардохт бояд то 12:00 рӯзи 5-уми моҳи оянда анҷом дода шавад.</li>
+    </ul>
+
+    <h2>5. Тамос</h2>
+    <ul>
+        <li>Почтаи электронӣ: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+        <li>Соатҳои корӣ: мунтазам дар дари мо эълон мешавад ё танҳо дар браузери худ <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> ворид кунед.</li>
+    </ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">Бо муҳаббат аз digga8</p>
+</footer>
+
+</body>
+</html>
