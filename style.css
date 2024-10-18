@@ -258,7 +258,7 @@ td a:hover {
 }
 td {
 	word-wrap: break-word;
-	max-width: 300px;
+	max-width: 200px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
