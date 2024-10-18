@@ -125,9 +125,11 @@ footer {
     position: relative;
     display: inline-block;
     text-align: center;
-	align-items: center;
-margin-right: calc(100vw - 5rem);
+    align-items: center;
+    margin: 0 auto; 
+    width: 15rem; 
 }
+
 
 #content {
     color: #e0e0e0;
