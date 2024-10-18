@@ -118,29 +118,28 @@ footer {
 }
 
 #dropdown {
-    background: #1a1a1a;
-    padding: 15px;
-    border: 3px dashed #76BA1B;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    display: none; /* Изначально скрыт */
-    text-align: center; 
-}
-
-#content {
-    color: #e0e0e0; 
-}
-
-#toggleButton {
-    width: 90%; 
-    background-color: #76BA1B;
-    color: #000; 
-    border: none; 
-    padding: 10px; 
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s; 
-}
-
-#toggleButton:hover {
-    background-color: #65a71c; /* Цвет при наведении */
-}
+            background: #1a1a1a;
+            padding: 15px;
+            border: 3px dashed #76BA1B;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            max-height: 0; /* Начальная высота 0 */
+            overflow: hidden; /* Скрыть переполнение */
+            transition: max-height 0.3s ease, opacity 0.3s ease; /* Плавный переход */
+            opacity: 0; /* Начальная прозрачность */
+        }
+        #content {
+            color: #e0e0e0; /* Цвет текста */
+        }
+        #toggleButton {
+            width: 100%; /* Занимает всю ширину */
+            background-color: #76BA1B; /* Цвет фона */
+            color: #000; /* Цвет текста */
+            border: none; /* Без рамки */
+            padding: 10px; /* Отступы */
+            cursor: pointer; /* Курсор указателя */
+            border-radius: 5px; /* Закругленные углы */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+        #toggleButton:hover {
+            background-color: #65a71c; /* Цвет при наведении */
+        }

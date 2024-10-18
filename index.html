@@ -59,32 +59,31 @@
     <button id="toggleButton">Aktuelle Öffnungszeiten</button>
 	
 <script>
-    const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
-    const url = `https://api.github.com/gists/${gistId}`;
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const fileName = Object.keys(data.files)[0];
-            const content = data.files[fileName].content;
-            document.getElementById('content').innerText = content;
-        })
-        .catch(error => console.error('Ошибка:', error));
-		
-		// Функция для показа/скрытия выпадающего списка
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+            })
+            .catch(error => console.error('Ошибка:', error));
+
         document.getElementById('toggleButton').addEventListener('click', () => {
             const dropdown = document.getElementById('dropdown');
-            if (dropdown.style.visibility === 'hidden' || dropdown.style.visibility === '') {
-                dropdown.style.visibility = 'visible';
-                dropdown.style.opacity = '1';
-                dropdown.style.height = 'auto'; // Разрешить высоту
-                dropdown.offsetHeight; // Принудительное перерисовывание
+            if (dropdown.style.maxHeight) {
+                dropdown.style.maxHeight = null;
+                dropdown.style.opacity = 0;
             } else {
-                dropdown.style.opacity = '0';
-                setTimeout(() => {
-                    dropdown.style.visibility = 'hidden';
-                    dropdown.style.height = '0'; // Устанавливаем высоту в 0
-                }, 300); // Даем время на завершение анимации
+                dropdown.style.maxHeight = dropdown.scrollHeight + "px"; 
+                dropdown.style.opacity = 1;
             }
         });
 </script>
