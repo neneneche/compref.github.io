@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационная панель</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #logo {
+            width: 100px; /* ширина лого*/
+            height: auto;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        .language-select {
+            margin-left: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Logo">
+    <nav>
+        <a href="russisch.html">Инфо</a>
+        <a href="contacts.html">Ссылки</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Язык</option>
+            <option value="englisch.html">English</option>
+            <option value="deutsch.html">Deutsch</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Интернет в Campus Brigittenau</h1>
+
+    <h2>1. Технические требования</h2>
+    <ul>
+        <li>Для прямого подключения вашего ПК/ноутбука к стене вам нужен сетевой порт на вашем устройстве и сетевой кабель, который можно приобрести в компрефе (длиной 5 м за 4 евро).</li>
+        <li>Устройства без сетевой карты требуют USB-LAN адаптер.</li>
+        <li>В общежитии нет общего WI-FI! Для Wi-Fi вам нужен роутер.</li>
+    </ul>
+
+    <h2>2. Процесс регистрации</h2>
+    <ul>
+        <li>Чтобы зарегистрировать ваше устройство (ноутбук, настольный ПК, роутер, Xbox, PS и т.д.), вам нужно обратиться в Компреф в часы работы.</li>
+        <li>Если у вас есть второе устройство и вы используете не роутер, а точку доступа, то вам нужно принести его в Компреф.</li>
+    </ul>
+
+    <h2>3. После регистрации</h2>
+    <ul>
+        <li>Настройте ваше устройство так, чтобы оно автоматически получало IP-адрес. (DHCP - обычно это настройка по умолчанию).</li>
+        <li>Пожалуйста, установите антивирусную программу и регулярно обновляйте вашу Windows (автоматические настройки).</li>
+        <li>Если ваш компьютер будет заражен, вы, вероятно, будете отключены от сети. В этом случае свяжитесь с нами.</li>
+        <li>У нас есть лимит на загрузку 40 ГБ за 24 часа и 80 ГБ за 72 часа. В ДВУХМЕСТНЫХ КОМНАТАХ этот лимит делится с вашим соседом!</li>
+        <li>Ограничьте вашу скорость загрузки до максимума 200 КБ/с (например, с помощью NetBalancer) или не разрешайте загрузку, если вы используете торрент-клиенты, Skype с видео или аналогичные P2P-приложения! Если вы превысите лимит, ваш интернет будет заблокирован на 72 часа! Вы можете проверить вашу загрузку на <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> или <a href="http://www/">http://www/</a> в разделе "Мой аккаунт".</li>
+        <li>Мы не можем разблокировать вас в случае превышения лимита!</li>
+    </ul>
+
+    <h2>4. Оплата</h2>
+    <ul>
+        <li>Ежемесячная плата составляет 5 евро.</li>
+        <li>Оплата ТОЛЬКО наличными и ТОЛЬКО в нашем офисе (также можно оплатить несколько месяцев вперед).</li>
+        <li>Оплата истекает 5 числа следующего месяца в 12:00.</li>
+    </ul>
+
+    <h2>5. Контакт</h2>
+    <ul>
+        <li>Электронная почта: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+        <li>Часы работы: Регулярно объявляются у нас на двери или просто введите <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> в вашем браузере.</li>
+    </ul>
+</main>
+
+<footer>
+	  <p><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+</footer>	  
+
+</body>
+</html>

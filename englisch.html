@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #logo {
+            width: 100px; 
+            height: auto;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        .language-select {
+            margin-left: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Logo">
+    <nav>
+        <a href="englisch.html">Info</a>
+        <a href="contacts.html">Links</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Language</option>
+            <option value="deutsch.html">Deutsch</option>
+            <option value="russisch.html">Русский</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Internet at Campus Brigittenau</h1>
+
+    <h2>1. Technical Requirements</h2>
+    <ul>
+        <li>For a direct connection with your PC/Laptop to the wall you need a Network Port on your Device and a Network cable, this can be purchased at the computer office if available (5m in length for EUR 4.-)</li>
+        <li>Devices without network card need an USB to LAN adapter.</li>
+        <li>There is no general WI-FI in dorm! For Wi-Fi you need a router.</li>
+    </ul>
+
+    <h2>2. Registration Process</h2>
+    <ul>
+        <li>In order to register your device (Laptop, Desktop, Router, Xbox, PS etc.) you need to contact the Computer Office at Opening Hours.</li>
+        <li>If you use an access point and have a 2nd device you want to make work on your wifi, you have to bring it to the computer office.</li>
+    </ul>
+
+    <h2>3. After Registration</h2>
+    <ul>
+        <li>Set up your device so that it gets its IP address automatically. (DHCP - Usually this is the default setting)</li>
+        <li>Please install an antivirus-program and update your windows regularly (automatic settings).</li>
+        <li>If your computer gets infected you are likely to be banned from the network. In this case contact the Computer Office.</li>
+        <li>We have an upload limit of 40GBs in 24hrs and 80GBs in 72hrs. In DOUBLE ROOMS this limit is shared with your roommate!!</li>
+        <li>Restrict your upload speed to max 200KBs (for example with NetBalancer) or do not allow upload if you’re using torrent clients, Skype with Video or similar p2p apps! If you get over the limit, your internet will be blocked for 72 hours! You can check your upload at <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> or <a href="http://www/">http://www/</a> under My Account.</li>
+        <li>The computer office can’t unblock you in case of overtraffic!</li>
+    </ul>
+
+    <h2>4. Payment</h2>
+    <ul>
+        <li>Monthly maintenance fee: EUR 5,-</li>
+        <li>Pay cash at our office (also several months in advance)</li>
+        <li>Payment expires on the next 5th at 12:00pm</li>
+    </ul>
+
+    <h2>5. Contact</h2>
+    <ul>
+        <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+        <li>Office hours: Regularly announced at our door or just simply type <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> in your browser.</li>
+    </ul>
+</main>
+
+<footer>
+	  <p><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    background-image: url('path-to-your-retro-background.png');
+    background-repeat: repeat;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #76BA1B;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #76BA1B;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #76BA1B;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #76BA1B;
+    color: #000;
+}
+
+.language-select {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #2a2a2a;
+    color: #76BA1B;
+    border: 2px solid #76BA1B;
+	
+}
+
+main {
+    padding: 20px;
+    background-color: #1a1a1a;
+    border: 0px dashed #76BA1B;
+    box-shadow: 0 0 0px rgba(118, 186, 27, 0.5);
+}
+
+h1, h2 {
+    color: #76BA1B;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.75em;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #76BA1B;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #e0e0e0;
+}
+
+/* Центрирование элемента <p> */
+p {
+    text-align: center; /* Центрирование текста */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+/* Добавление стиля для кнопок */ 
+button {
+    background-color: #76BA1B;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #65a71c; /* Темный зеленый при наведении */
+} 
+footer {
+	border-top: 3px solid #76BA1B;
+	color: #76BA1B;
+	
+}
+
+напиши html i js код, который будет подтягивать текст 
