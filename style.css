@@ -172,6 +172,7 @@ footer {
     justify-content: center;
 }
 #outerContentBox{
-
+	display: flex;
+    	justify-content: center;
    
 }
