@@ -52,6 +52,12 @@
 <main>
     <h1>Internet at Campus Brigittenau</h1>
 
+	 <div id="dropdown" style="display: none;">
+        <div id="content"></div>
+    </div>
+
+    <button id="toggleButton">Aktuelle Öffnungszeiten</button>
+	
 <script>
     const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
     const url = `https://api.github.com/gists/${gistId}`;
@@ -64,9 +70,13 @@
             document.getElementById('content').innerText = content;
         })
         .catch(error => console.error('Ошибка:', error));
+		
+		// Функция для показа/скрытия выпадающего списка
+        document.getElementById('toggleButton').addEventListener('click', () => {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        });
 </script>
-
-	<div id="content"></div>
 
     <h2>1. Technical Requirements</h2>
     <ul>
