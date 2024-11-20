@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة المعلومات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="الشعار" href="index.html">
+    <nav>
+        <a href="englisch.html">معلومات</a>
+        <a href="links.html">روابط</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">اللغة</option>
+            <option value="index.html">Deutsch</option>
+			<option value="englisch.html">English</option>
+            <option value="russisch.html">Русский</option>
+            <option value="ukrainisch.html">Українська</option>
+            <option value="tadschikisch.html">Тоҷикӣ</option>
+            <option value="albanisch.html">Shqiptare</option>
+            <option value="serbisch.html">Српски</option>
+			<option value="chinesisch.html">中国人</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>الإنترنت في حرم بريغيتيناو</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">جار التحميل...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- الأسهم المعكوسة -->
+            <div id="overlay">آخر تحديث: ...</div>
+        </div>
+    </div>
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('لم تكن الاستجابة الشبكية صحيحة ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // تعيين وقت آخر تحديث
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `آخر تحديث: ${updatedAt}`;
+            })
+            .catch(error => console.error('خطأ:', error));
+    </script>
+
+<h2>1. المتطلبات الفنية</h2>
+<ul>
+    <li>لتوصيل جهازك مباشرة بالمنفذ الشبكي الصحيح على الحائط، يحتاج جهازك إلى منفذ إيثرنت. يمكن شراء كابل الشبكة من مركز الكمبيوتر إذا كان متاحًا (طول 5 متر مقابل 4€).</li>
+    <li>الأجهزة التي لا تحتوي على منفذ إيثرنت تحتاج إلى محول USB إلى LAN للاستخدام السلكي.</li>
+    <li>لا يوجد واي فاي عام في السكن باستثناء الذي في الردهة. إذا كنت ترغب في الحصول على واي فاي في غرفتك، تحتاج إلى شراء جهاز توجيه. يمكن شراؤه من مركز الكمبيوتر إذا كان متاحًا بسعر 20€.</li>
+</ul>
+
+<h2>2. عملية التسجيل</h2>
+<ul>
+    <li>لتسجيل جهازك (كمبيوتر محمول، كمبيوتر مكتبي، جهاز توجيه، Xbox، PS، إلخ) تحتاج إلى الاتصال بمركز الكمبيوتر خلال ساعات العمل.</li>
+    <h3 style="text-align: center; text-decoration: underline; color: red;">تحذير!</h3>
+    <li>من المحتمل أن لا تعمل مودمات DSL <b style="color: orange;">على الإطلاق</b>! يمكن تسجيل نقاط الوصول (منفذ شبكة واحد في الخلف)، ولكننا بحاجة إلى <b style="color: orange;">جميع</b> أجهزتك للتسجيل.</li>
+</ul>
+
+<h2>3. بعد التسجيل</h2>
+<ul>
+    <li>إذا كنت تتصل مباشرة بمقبس الحائط، قم بضبط جهازك للحصول على عنوان IP تلقائيًا. (DHCP - عادةً ما يكون هذا هو الإعداد الافتراضي)</li>
+    <li>إذا تم إصابة جهاز الكمبيوتر الخاص بك، فمن المحتمل أن يتم حظرك من الشبكة. في هذه الحالة، يرجى الاتصال بمركز الكمبيوتر.</li>
+    <li>لدينا حد تحميل قدره 40 جيجابايت في 24 ساعة و 80 جيجابايت في 72 ساعة. في الغرف المزدوجة، يتم <b style="color: orange;">مشاركة</b> هذا الحد مع زميلك في الغرفة!!</li>
+    <li>لتجنب تجاوز حركة المرور، تحتاج إلى إيقاف النسخ الاحتياطي التلقائي. يمكن أن تتسبب الأنشطة مثل: البث على تويتش / ديسكورد، مشاهدة التدفقات غير القانونية، واستخدام التورنت في تجاوز الحد. إذا تجاوزت الحد، سيتم حظر الإنترنت لمدة 72 ساعة! يمكنك التحقق من تحميلك على <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> ضمن حسابي.</li>
+    <li><b style="text-decoration: underline;">مركز الكمبيوتر <b style="color: red;">لا يمكنه</b> فتح الحظر في حالة تجاوز حركة المرور!!!</b></li>
+</ul>
+
+<h3 style="text-align: center; text-decoration: underline; color: red;">كيفية توصيل جهاز توجيه</h3>
+<ul>
+    <li>في غرفتك، قم بتوصيل <b style="color: orange;">كلا</b> كابل الطاقة وكابل الشبكة في الجزء الخلفي لجهاز التوجيه. يجب توصيل كابل الشبكة بمنفذ <b style="color:orange;">الأزرق</b> لجهاز التوجيه.</li>
+    <li>قم بتوصيل محول الطاقة لجهاز التوجيه في مقبس الكهرباء. يجب توصيل كابل الشبكة بأحد منفذي الشبكة على الحائط. يجب أن يكون المنفذ الصحيح <b style="color: orange;">مُعَلَمًا</b> برقم غرفتك. إذا لم يكن هناك ملصق، فمن المحتمل أن يكون المنفذ الأيسر.</li>
+    <li>إذا تم الاتصال بشكل صحيح، يجب أن تكون أضواء LED على اللوحة الأمامية لجهاز التوجيه خضراء، <b style="color: orange;">وليس</b> برتقالية أو حمراء.</li>
+    <li>يمكنك العثور على اسم شبكة الواي فاي وكلمة المرور في أسفل جهاز التوجيه.</li>
+    <li>تذكر: الاتصال <b style="color: orange;">السلكي</b> هو <b style="color: orange;">أسرع</b> وأكثر <b style="color: orange;">استقرارًا</b>.</li>
+</ul>
+
+<h2>4. الدفع</h2>
+<ul>
+    <li>رسوم الصيانة الشهرية: 5€</li>
+    <li>الدفع <b style="color: orange;">فقط نقدًا</b> في مكتبنا (الدفع لعدة أشهر مسبقًا ممكن وموصى به =))</li>
+    <li>ينتهي الدفع في اليوم الخامس من كل شهر الساعة 12:00 ظهرًا.</li>
+</ul>
+
+<h2>5. الاتصال</h2>
+<ul>
+    <li>البريد الإلكتروني: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+    <li>ساعات العمل: يتم الإعلان عنها بانتظام على بابنا، في مجموعة واتساب الخاصة بنا (يمكن العثور على الروابط هنا وعلى الباب) وعلى هذا الموقع.</li>
+</ul>
+
+<h2>6. جمع المعلومات</h2>
+<ul>
+    <li>تم إنشاء مجموعة دردشة عبر واتساب من قبل الطلاب للطلاب. <br />
+        يرجى الانضمام إلينا لتبادل المعلومات، شراء الأشياء، مشاركة مواقع وحدات التحكم، وعدم تفويت الأنشطة الأخرى =) </li>
+    <button id="showQRCodeBtn">اضغط للحصول على رمز الاستجابة السريعة</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="رمز الاستجابة السريعة" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">اضغط للحصول على الرابط</button>
+    </a>
+
+<!-- qr code js -->
+
+<script>
+    document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+        event.stopPropagation(); // منع الحدث من الفقاعة
+        document.getElementById("qrPopup").style.display = "block"; // عرض رمز الاستجابة السريعة
+    });
+
+    // إغلاق النافذة المنبثقة عند النقر في الخارج
+    document.addEventListener("click", function() {
+        document.getElementById("qrPopup").style.display = "none"; // إخفاء رمز الاستجابة السريعة
+    });
+
+    // إغلاق النافذة المنبثقة عند النقر على الصورة (إذا لزم الأمر)
+    document.getElementById("qrPopup").addEventListener("click", function(event) {
+        event.stopPropagation(); // منع الحدث من الفقاعة
+    });
+</script>
+
+</ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88">digga8</a></p>
+</footer>
+
+</body>
+</html>

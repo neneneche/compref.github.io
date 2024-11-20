@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacioni panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Logo" href="index.html">
+    <nav>
+        <a href="englisch.html">Info</a>
+        <a href="links.html">Linkovi</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Jezik</option>
+            <option value="index.html">Deutsch</option>
+            <option value="russisch.html">Русский</option>
+            <option value="ukrainisch.html">Українська</option>
+            <option value="tadschikisch.html">Тоҷикӣ</option>
+            <option value="albanisch.html">Shqiptare</option>
+			<option value="chinesisch.html">中国人</option>
+			<option value="arabisch.html">عربي</option>
+			
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Internet na kampusu Brigittenau</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">učitavanje...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- Preokrenute strelice -->
+            <div id="overlay">Poslednje ažuriranje: ...</div>
+        </div>
+    </div>
+
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Mrežni odgovor nije u redu ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // Postavljanje vremena poslednjeg ažuriranja
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `Poslednje ažuriranje: ${updatedAt}`;
+            })
+            .catch(error => console.error('Greška:', error));
+    </script>
+
+<h2>1. Tehnički zahtevi</h2>
+<ul>
+    <li>Da biste povezali svoj uređaj direktno na odgovarajući mrežni port na zidu, vaš uređaj treba da ima Ethernet port. Mrežni kabl se može kupiti u komprefu, ako je dostupan (5m dužine za 4€)</li>
+    <li>Uređaji bez Ethernet porta zahtevaju USB to LAN adapter za korišćenje žičanog internet povezivanja.</li>
+    <li>U domu nema javnog WI-FI-a osim onog u holu panorame. Ako želite Wi-Fi u svojoj sobi, potrebno je da nabavite ruter. Može se kupiti u komprefu, ako je dostupan i košta 20€.</li>
+</ul>
+
+<h2>2. Proces registracije</h2>
+<ul>
+    <li>Da biste registrovali svoj uređaj (laptop, desktop, ruter, Xbox, PS itd.), potrebno je da se obratite komprefu tokom radnog vremena.</li>
+    <h3 style="text-align: center; text-decoration: underline; color: red;">PAŽNJA!</h3>
+    <li>DSL modemi verovatno <b style="color: orange;">NEĆE</b> raditi! Pristupne tačke (jedan mrežni port na zadnjem panelu) mogu biti registrovane, ali nam je potrebno <b style="color: orange;">SVI</b> vaši uređaji za registraciju.</li>
+</ul>
+
+<h2>3. Nakon registracije</h2>
+<ul>
+    <li>Ako se povezujete direktno na internet port na zidu, podesite uređaj da automatski dobija IP adresu. (DHCP - Obično je ovo podrazumevani režim)</li>
+    <li>Ako vaš računar bude zaražen, verovatno ćete biti blokirani na mreži. U tom slučaju kontaktirajte kompref.</li>
+    <li>Imamo limit za preuzimanje od 40 GB u 24 časa i 80 GB u 72 časa. U DVOPOSTELJIM SOBAMA ovaj limit je <b style="color: orange;">PODJELJEN</b> sa vašim cimerom!!</li>
+    <li>Da biste izbegli prekoračenje limita, potrebno je da isključite automatske rezervne kopije. Takođe, prekoračenje limita može biti izazvano aktivnostima kao što su: striming na Twitch-u/Discord-u, gledanje ilegalnih prenosa, korišćenje torrenta. Ako prekoračite limit, vaša internet konekcija biće blokirana na 72 časa! Možete proveriti preostali saobraćaj na <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> u sekciji Moj nalog.</li>
+    <li><b style="text-decoration: underline;">KOMPREF <b style="color: red;">NE MOŽE</b> DA OTKLONI BLOKADU U SLUČAJU PREKORAČENJA LIMITA!!!</b></li>
+</ul>
+
+<h3 style="text-align: center; text-decoration: underline; color: red;">KAKO POVEZATI RUTER</h3>
+<ul>
+    <li>U svojoj sobi, molimo vas da priključite <b style="color: orange;">OBA</b> napajanja i mrežni kabl na zadnjoj strani rutera. Mrežni kabl treba da bude priključen u <b style="color:orange;">PLAVI</b> port rutera.</li>
+    <li>Priključite napajanje rutera u utičnicu. Mrežni kabl treba da bude povezan u jedan od 2 mrežna porta na zidu. Pravi port <b style="color: orange;">MORA</b> biti označen brojem vaše sobe. Ako nema oznake, verovatno je levi port.</li>
+    <li>Ako je sve ispravno povezano, LED svetla na prednjem panelu rutera treba da budu zelena, <b style="color: orange;">NE</b> narandžasta ili crvena.</li>
+    <li>Ime i lozinku za Wi-Fi možete pronaći na donjoj strani rutera.</li>
+    <li>Zapamtite: <b style="color: orange;">ŽIČANO</b> povezivanje je <b style="color: orange;">BRŽE</b> i stabilnije <b style="color: orange;">STABILNIJE</b>.</li>
+</ul>
+
+<h2>4. Plaćanje</h2>
+<ul>
+    <li>Mesečna naknada za uslugu: 5€</li>
+    <li>Plaćanje <b style="color: orange;">SAMO U GOTOVINI</b> u našoj kancelariji (plaćanje unapred za nekoliko meseci je moguće i preporučuje se =))</li>
+    <li>Plaćanje je potrebno izvršiti do 5. u mesecu do 12:00 časova.</li>
+</ul>
+
+<h2>5. Kontakt</h2>
+<ul>
+    <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+    <li>Radno vreme: Redovno se objavljuje na vratima komprefa, u našoj WhatsApp grupi (linkovi se mogu pronaći ovde i na vratima) i na ovoj veb stranici.</li>
+</ul>
+
+<h2>6. Prikupljanje informacija</h2>
+<ul>
+    <li>Chat na WhatsApp-u je stvoren od strane studenata za studente. <br />
+        Molimo vas da se pridružite kako biste razmenjivali informacije, kupovali stvari, delili lokacije kontrolora i ne propustili druge aktivnosti =) </li>
+    <button id="showQRCodeBtn">KLIKNITE za QR kod</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR kod" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">KLIKNITE za link</button>
+    </a>
+
+<!-- qr code js -->
+
+<script>
+    document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+        event.stopPropagation(); // Ostopiti klik od prozora
+        document.getElementById("qrPopup").style.display = "block"; // Prikazati QR kod
+    });
+
+    // Zatvaranje popup-a klikom izvan njega
+    document.addEventListener("click", function() {
+        document.getElementById("qrPopup").style.display = "none"; // Sakriti QR kod
+    });
+
+    // Zatvaranje popup-a klikom na sliku (ako je potrebno)
+    document.getElementById("qrPopup").addEventListener("click", function(event) {
+        event.stopPropagation(); // Ostopiti klik od prozora
+    });
+</script>
+
+</ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88">digga8</a></p>
+</footer>
+
+</body>
+</html>

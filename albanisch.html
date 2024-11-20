@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paneli i informacionit</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Logo">
+    <nav>
+        <a href="albanisch.html">Informacion</a>
+        <a href="links.html">Lidhjet</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">Gjuha</option>
+            <option value="index.html">Deutsch</option>
+            <option value="englisch.html">English</option>
+			<option value="russisch.html">Русский</option>
+            <option value="ukrainisch.html">Українська</option>
+			<option value="tadschikisch.html">Тоҷикӣ</option>
+			<option value="serbisch.html">Српски</option>
+			<option value="chinesisch.html">中国人</option>
+			<option value="arabisch.html">عربي</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Internet në Campus Brigittenau</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">loading...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- Перевёрнутые стрелочки -->
+            <div id="overlay">Përditësimi i fundit:...</div>
+        </div>
+    </div>
+
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // Устанавливаем время последнего обновления
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `Përditësimi i fundit: ${updatedAt}`;
+            })
+            .catch(error => console.error('Fehler:', error));
+    </script>
+
+<h2>1. Kërkesat teknike</h2>
+<ul>
+    <li>Për të lidhur pajisjen tuaj drejtpërdrejt në portin e duhur të rrjetit në mur, pajisja juaj duhet të ketë një port Ethernet. Kablli i rrjetit mund të blihet në kompref, nëse është i disponueshëm (5m gjatësi për 4€)</li>
+    <li>Pajisjet pa port Ethernet kanë nevojë për një adapter USB në LAN për t'u përdorur me kabull.</li>
+    <li>Nuk ka Wi-Fi publik në konvikte përveç atij në hollin e panoramës. Nëse dëshironi Wi-Fi në dhomën tuaj, duhet të blini një router. Ai mund të blihet në kompref, nëse është i disponueshëm dhe kushton 20€.</li>
+</ul>
+
+<h2>2. Procesi i regjistrimit</h2>
+<ul>
+    <li>Për të regjistruar pajisjen tuaj (Laptop, Desktop, Router, Xbox, PS etj.), duhet të kontaktoni kompref gjatë orëve të hapjes.</li>
+    <h3 style="text-align: center; text-decoration: underline; color: red;">KUJDES!</h3>
+    <li>Modemët DSL ndoshta <b style="color: orange;">NUK</b> do të funksionojnë! Pikët e aksesit (një port rrjeti në pjesën e pasme) mund të regjistrohen, por na duhen <b style="color: orange;">TË GJITHA</b> pajisjet tuaja për regjistrim.</li>
+</ul>
+
+<h2>3. Pas regjistrimit</h2>
+<ul>
+    <li>Nëse po lidhni drejtpërdrejt në portin e murit, konfiguroni pajisjen tuaj për të marrë automatikisht adresën IP. (DHCP - zakonisht kjo është cilësimi i parazgjedhur)</li>
+    <li>Nëse kompjuteri juaj infektohet, ka gjasa që të bllokoheni nga rrjeti. Në këtë rast kontaktoni kompref.</li>
+    <li>Kemi një kufi ngarkese prej 40GB në 24 orë dhe 80GB në 72 orë. Në DHOMA DUBLIM, ky kufi është <b style="color: orange;">I PËRSHERËD</b> me shokun tuaj të dhomës!!</li>
+    <li>Për të parandaluar tejkalimin e kufirit, duhet të çaktivizoni kopjet automatike. Gjithashtu, duhet të jeni të kujdesshëm me këto aktivitete: transmetimi në Twitch/Discord, shikimi i transmetimeve ilegale, përdorimi i torrentëve (më mirë të shmangni këtë). Nëse tejkaloni kufirin, lidhja juaj me internetin do të bllokohet për 72 orë! Mund të kontrolloni mbetjen e trafikut tuaj në <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> në seksionin "Llogaria ime".</li>
+    <li><b style="text-decoration: underline;">NE <b style="color: red;">NUK MUND TË</b> HEQIM BLOKIMIN NË RAST TË TEJKALIMIT TË KUFIRIT!!!</b></li>
+</ul>
+
+<h3 style="text-align: center; text-decoration: underline; color: red;">SI TË LIDHNI KËSHTU PËRDITËSUAR NJË ROUTER</h3>
+<ul>
+    <li>Në dhomën tuaj, lidhni <b style="color: orange;">SI</b> bllokun e energjisë, <b style="color: orange;">PO ASHTU</b> kabllin e rrjetit në portet përkatëse në pjesën e pasme të router-it. Kablli i rrjetit duhet të lidhet me portin <b style="color:orange;">TË KALTËR</b> të router-it.</li>
+    <li>Lidhni bllokun e energjisë të router-it në prizë. Kablli i rrjetit duhet të lidhet me një nga dy portet e rrjetit në mur. Porti i saktë <b style="color: orange;">DUHET</b> të ketë etiketën e numrit të dhomës tuaj. Nëse nuk ka etiketë, me shumë mundësi është porti i majtë.</li>
+    <li>Nëse gjithçka është lidhur siç duhet, dritat në panelin e përparëm të router-it duhet të jenë të gjelbra, <b style="color: orange;">JO</b> portokalli ose të kuqe.</li>
+    <li>Emri dhe fjalëkalimi për Wi-Fi janë në pjesën e poshtme të router-it.</li>
+    <li>Një këshillë: <b style="color: orange;">LIDHJA ME KABULL</b> është <b style="color: orange;">MË E SHPEJTË</b> dhe <b style="color: orange;">MË E QËNDRUESHME</b>.</li>
+</ul>
+
+<h2>4. Pagesa</h2>
+<ul>
+    <li>Pagesa mujore për mirëmbajtje: 5€</li>
+    <li>Pagesa <b style="color: orange;">VEÇMAS ME PARA NË DORË</b> në zyrën tonë (pagesa për disa muaj paraprakisht është e mundur dhe e rekomanduar =))</li>
+    <li>Pagesa duhet bërë deri më 5 të çdo muaji deri në orën 12:00.</li>
+</ul>
+
+<h2>5. Kontaktet</h2>
+<ul>
+    <li>Email: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+    <li>Orët e punës mund t'i gjeni në vendet më të afërta: në derën e komprefit, në grupin tonë në WhatsApp (lidhjet mund të gjenden këtu dhe në derë) dhe në këtë faqe.</li>
+</ul>
+
+<h2>6. Chat në Whatsapp</h2>
+<ul>
+    <li> Chat-i në WhatsApp është shpikur nga studentët për studentët. <br />
+	Ju lutemi bashkohuni për shkëmbimin e informacionit, blerjen e sendeve, ndarjen e lokacioneve të kontrolleve dhe aktivitete të tjera :)</li>
+</ul>
+
+		<button id="showQRCodeBtn">KLIKONI për kodin QR</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="QR Код" />
+    </div>
+	
+	<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+		<button style="background-color: #8b0000; color: #fff;">KLIKO për lidhjen</button>
+	</a>
+
+<!-- qr code js -->
+
+<script>
+	document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+
+
+    </ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+   <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88">digga8</a></p>
+</footer>	  
+
+</body>
+</html>

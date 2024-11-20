@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息面板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img id="logo" src="logo.png" alt="Logo" href="index.html">
+    <nav>
+        <a href="englisch.html">信息</a>
+        <a href="links.html">链接</a>
+        <select class="language-select" onchange="location = this.value;">
+            <option value="language.html">语言</option>
+            <option value="index.html">Deutsch</option>
+			<option value="englisch.html">English</option>
+            <option value="russisch.html">Русский</option>
+            <option value="ukrainisch.html">Українська</option>
+            <option value="tadschikisch.html">Тоҷикӣ</option>
+            <option value="albanisch.html">Shqiptare</option>
+            <option value="serbisch.html">Српски</option>
+			<option value="arabisch.html">عربي</option>
+        </select>
+    </nav>
+</header>
+
+<main>
+    <h1>Brigittenau 校园的互联网</h1>
+
+<div id="outerContentBox">
+        <div id="contentBox" class="timetable">
+            <div id="content">加载中...</div>
+            <button id="refreshButton">&#8595;&#8593;</button> <!-- 反向箭头 -->
+            <div id="overlay">最后更新: ...</div>
+        </div>
+    </div>
+
+    <script>
+        const gistId = '182bca0e9cba50884ba75b42dee0699b'; 
+        const url = `https://api.github.com/gists/${gistId}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应不正常 ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileName = Object.keys(data.files)[0];
+                const content = data.files[fileName].content;
+                document.getElementById('content').innerText = content;
+
+                // 设置最后更新时间
+                const updatedAt = new Date(data.updated_at).toLocaleString();
+                document.getElementById('overlay').innerText = `最后更新: ${updatedAt}`;
+            })
+            .catch(error => console.error('错误:', error));
+    </script>
+
+<h2>1. 技术要求</h2>
+<ul>
+    <li>要将设备直接连接到墙上的正确网络端口，您的设备需要有以太网端口。网络电缆可以在计算机商店购买（如果有的话，5米长，4€）。</li>
+    <li>没有以太网端口的设备需要使用 USB 到 LAN 转换器才能有线连接。</li>
+    <li>宿舍楼内没有公共 Wi-Fi，除非在大堂。如果您希望在房间里使用 Wi-Fi，您需要购买一个路由器。可以在计算机商店购买（如果有的话），价格为 20€。</li>
+</ul>
+
+<h2>2. 注册流程</h2>
+<ul>
+    <li>为了注册您的设备（笔记本电脑、台式机、路由器、Xbox、PS 等），您需要在开放时间联系计算机商店。</li>
+    <h3 style="text-align: center; text-decoration: underline; color: red;">警告！</h3>
+    <li>DSL 调制解调器可能 <b style="color: orange;">无法</b> 使用！访问点（背面一个网络端口）可以注册，但我们需要 <b style="color: orange;">所有</b> 设备进行注册。</li>
+</ul>
+
+<h2>3. 注册后</h2>
+<ul>
+    <li>如果您直接连接到墙壁插座，请将设备设置为自动获取 IP 地址。（DHCP - 通常是默认设置）</li>
+    <li>如果您的计算机感染了病毒，您可能会被禁止访问网络。在这种情况下，请联系计算机商店。</li>
+    <li>我们有一个上传限制：24 小时内 40GB，72 小时内 80GB。在双人房中，该限制与您的室友 <b style="color: orange;">共享</b>！</li>
+    <li>为了防止超载，请关闭自动备份。此外，超载还可能由以下活动引起：在 Twitch/Discord 上流媒体、观看非法流媒体、使用 torrent 下载。如果您超出限制，您的互联网将被封锁 72 小时！您可以在 <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> 上的“我的帐户”中检查您的上传情况。</li>
+    <li><b style="text-decoration: underline;">计算机商店 <b style="color: red;">无法</b> 在流量超载的情况下解除封锁！</b></li>
+</ul>
+
+<h3 style="text-align: center; text-decoration: underline; color: red;">如何连接路由器</h3>
+<ul>
+    <li>在您的房间里，请将 <b style="color: orange;">两个</b> 电源和网络电缆插入路由器的背面。网络电缆应插入路由器的 <b style="color:orange;">蓝色</b> 端口。</li>
+    <li>将路由器的电源插头插入电源插座。网络电缆应插入墙上的两个网络端口之一。正确的端口 <b style="color: orange;">应该</b> 标有您的房间号。如果没有标签，通常是左侧端口。</li>
+    <li>如果连接正确，路由器前面板上的 LED 应该是绿色的，<b style="color: orange;">而不是</b> 橙色或红色。</li>
+    <li>您可以在路由器底部找到 Wi-Fi 名称和密码。</li>
+    <li>记住：<b style="color: orange;">有线</b> 连接更 <b style="color: orange;">快速</b> 且更加 <b style="color: orange;">稳定</b>。</li>
+</ul>
+
+<h2>4. 付款</h2>
+<ul>
+    <li>每月维护费：5€</li>
+    <li>请 <b style="color: orange;">仅以现金</b> 在我们的办公室付款（建议提前支付几个月 =))</li>
+    <li>付款截止日期为每月 5 日中午 12:00。</li>
+</ul>
+
+<h2>5. 联系</h2>
+<ul>
+    <li>电子邮件：<a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+    <li>办公时间：在我们的门上、我们的 WhatsApp 群组（可以在这里和门上找到链接）以及本网站上定期公告。</li>
+</ul>
+
+<h2>6. 信息收集</h2>
+<ul>
+    <li>这是由学生为学生创建的 WhatsApp 群聊。<br />
+        请加入我们，交换信息、购买物品、分享控制器位置，别错过其他活动 =) </li>
+    <button id="showQRCodeBtn">点击获取二维码</button>
+    <div id="qrPopup" class="popup">
+        <img src="qrlink.png" alt="二维码" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">点击链接</button>
+    </a>
+
+<!-- qr code js -->
+
+<script>
+    document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
+        event.stopPropagation(); // 阻止事件冒泡
+        document.getElementById("qrPopup").style.display = "block"; // 显示二维码
+    });
+
+    // 点击弹窗外部关闭弹窗
+    document.addEventListener("click", function() {
+        document.getElementById("qrPopup").style.display = "none"; // 隐藏二维码
+    });
+
+    // 点击图片关闭弹窗（如果需要的话）
+    document.getElementById("qrPopup").addEventListener("click", function(event) {
+        event.stopPropagation(); // 阻止事件冒泡
+    });
+</script>
+
+</ul>
+</main>
+
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
+    <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
+    <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88">digga8</a></p>
+</footer>
+
+</body>
+</html>
