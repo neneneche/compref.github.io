@@ -84,7 +84,7 @@
     <li>Falls Ihr Computer infiziert ist, werden Sie höchstwahrscheinlich vom Netzwerk ausgeschlossen. In diesem Fall kontaktieren Sie bitte den Compref.</li>
     <li>Es gibt ein Upload-Limit von 40 GB in 24 Stunden und 80 GB in 72 Stunden. In <b style="color: orange;">DOPPELZIMMERN</b> wird dieses Limit <b style="color: orange;">mit Ihrem Mitbewohner geteilt!!</b></li>
     <li>Um Überschreitung zu vermeiden, müssen Sie automatische Backups ausschalten. Überschreitung kann auch durch Dinge wie: Streaming auf Twitch/in Discord, das Ansehen illegaler Streams, Verwendung von Torrents verursacht werden. Wenn Sie das Limit überschreiten, wird Ihr Internetzugang für 72 Stunden gesperrt! Sie können Ihren Upload auf <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> unter Mein Konto überprüfen.</li>
-    <li><b class="warning-text">DAS COMPREF <span style="color: red;">KANN SIE NICHT</span> IM FALL VON ÜBERLASTUNG ENTSPERREN!!!</b></li>
+    <li><b class="warning-text">DAS COMPREF <span style="color: red;">KANN SIE NICHT</span> IM FALL VON ÜNERSCHREITUNG ENTSPERREN!!!</b></li>
 </ul>
 
 <h3 style="text-align: center; text-decoration: underline; color: red;">WIE MAN EINEN ROUTER ANSCHLIESST</h3>
@@ -105,7 +105,7 @@
         Uhr (wenn nicht im Voraus bezahlt). 
         <button class="normal-time" onclick="toggleTimeFormat(this)">Normal Time</button>
     </span></li>
-    <li><b style="color:orange">FÜR NEUEINSTEIGER:</b> Das Internet ist vom Tag der Registrierung bis zum <b style="color:orange">5.</b> des nächsten Monats kostenlos.</li>
+    <li><b style="color:orange">FÜR NEUEINSTEIGER:</b> Das Internet ist vom Tag der Registrierung bis zum nächsten <b style="color:orange">5.</b> kostenlos.</li>
 </ul>
 
 <h2>5. Kontakt</h2>
@@ -118,6 +118,7 @@
 <ul>
     <li>Ein WhatsApp-Chat wurde von Studierenden für Studierende erstellt. <br />
         Bitte treten Sie bei, um Informationen auszutauschen, Dinge zu kaufen und zu verkaufen, Fahrscheinkontrollstellen zu teilen und keine anderen Aktivitäten zu verpassen =)</li>
+		<li>Chat</li>
     <button id="showQRCodeBtn">KLICKEN für den QR-Code</button>
     <div id="qrPopup" class="popup">
         <img src="qrlink.png" alt="QR-Code" />
@@ -126,6 +127,19 @@
     <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
         <button style="background-color: #8b0000; color: #fff;">KLICKEN für den Link</button>
     </a>
+</ul>
+<ul>
+<li>Announcements</li>
+    <button id="showQRCodeBtn2">KLICKEN für den QR-Code</button>
+    <div id="qrPopup2" class="popup2">
+        <img src="annqr.png" alt="QR-Code2" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/IXqQtw8pGz680E8v2oI2cn" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">KLICKEN für den Link</button>
+    </a>
+	
+	
 </ul>
 
 	
@@ -144,6 +158,23 @@ document.addEventListener("click", function() {
 
 // Закрытие попапа при клике на изображение (если нужно)
 document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+<script>
+	document.getElementById("showQRCodeBtn2").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup2").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup2").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup2").addEventListener("click", function(event) {
     event.stopPropagation(); // Остановить событие клика от всплытия
 });
 </script>

@@ -65,7 +65,7 @@
 <h2>1. Технические требования</h2>
 <ul>
     <li>Для подключения вашего устройства к сетевому порту на стене, ваше устройство должно иметь Ethernet-порт. Сетевой кабель можно приобрести в Compref (5 м длиной за 4€), при наличии оного.</li>
-    <li>Устройства без Ethernet-порта требуют адаптера USB-to-LAN для проводного подключения. Адаптер можно купить в Compref (если он есть в наличии) за 6€.</li>
+    <li>Устройства без Ethernet-порта требуют адаптер USB-to-LAN для проводного подключения. Адаптер можно купить в Compref (если он есть в наличии) за 6€.</li>
     <li>В общежитии нет общедоступного Wi-Fi, за исключением Wi-Fi в холле главного здания. Если нужен Wi-Fi в вашей комнате, нужно приобрести роутер. Он стоит 20€, если есть в наличии.</li>
     <li>Важно: <b style="color: orange;">ПРОВОДНОЕ</b> подключение <b style="color: orange;">БЫСТРЕЕ</b> и более <b style="color: orange;">СТАБИЛЬНОЕ</b>.</li>
 </ul>
@@ -105,7 +105,7 @@
         (если не оплачено заранее). 
         <button class="normal-time" onclick="toggleTimeFormat(this)">Normal time</button>
     </span></li>
-    <li><b style="color:orange">ДЛЯ НОВОПРИБЫВШИХ:</b> Интернет бесплатен с момента вашей регистрации до <b style="color:orange">5</b> числа следующего месяца.</li>
+    <li><b style="color:orange">ДЛЯ НОВОПРИБЫВШИХ:</b> Интернет бесплатен с момента вашей регистрации до следующего <b style="color:orange">5</b> числа.</li>
 </ul>
 
 <h2>5. Контакт</h2>
@@ -118,6 +118,7 @@
 <ul>
     <li>Для студентов был создан чат в WhatsApp. <br />
         Присоединяйтесь к нам, чтобы обмениваться информацией, покупать вещи, делиться местоположением контроллёров и не пропускать другие мероприятия =) </li>
+   <li>Чат</li>
     <button id="showQRCodeBtn">ТЫК для QR-кода</button>
     <div id="qrPopup" class="popup">
         <img src="qrlink.png" alt="QR-код" />
@@ -126,6 +127,20 @@
     <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
         <button style="background-color: #8b0000; color: #fff;">ТЫК для ссылки</button>
     </a>
+</ul>
+
+<ul>
+<li>Анонсы</li>
+    <button id="showQRCodeBtn2">ТЫК для QR-кода</button>
+    <div id="qrPopup2" class="popup2">
+        <img src="annqr.png" alt="QR-Code2" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/IXqQtw8pGz680E8v2oI2cn" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">ТЫК для ссылки</button>
+    </a>
+	
+	
 </ul>
 
 <!-- qr code js -->
@@ -143,6 +158,23 @@ document.addEventListener("click", function() {
 
 // Закрытие попапа при клике на изображение (если нужно)
 document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+<script>
+	document.getElementById("showQRCodeBtn2").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup2").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup2").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup2").addEventListener("click", function(event) {
     event.stopPropagation(); // Остановить событие клика от всплытия
 });
 </script>

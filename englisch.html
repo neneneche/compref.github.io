@@ -110,7 +110,7 @@
         <button class="normal-time" onclick="toggleTimeFormat(this)">Normal Time</button>
     </span>
 	</li>
-	<li><b style="color:orange">FOR NEWCOMERS:</b> The internet is free from the day you register till the <b style="color:orange">5th</b> of the next month. </li>
+	<li><b style="color:orange">FOR NEWCOMERS:</b> The internet is free from the day you register till the next <b style="color:orange">5th</b>. </li>
 </ul>
 
 <h2>5. Contact</h2>
@@ -123,14 +123,29 @@
 <ul>
     <li>A chat in WhatsApp was created for students by students. <br />
         Please join us to exchange information, buy stuff, share controller locations, and not miss out on other activities =) </li>
-    <button id="showQRCodeBtn">CLICK for the QR Code</button>
+  <li>Chat</li>
+    <button id="showQRCodeBtn">CLICK for the QR-Code</button>
     <div id="qrPopup" class="popup">
-        <img src="qrlink.png" alt="QR Code" />
+        <img src="qrlink.png" alt="QR-Code" />
     </div>
 
-	<a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
-		<button style="background-color: #8b0000; color: #fff;">CLICK for the link</button>
-	</a>
+    <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">CLICK for the Link</button>
+    </a>
+</ul>
+<ul>
+<li>Announcements</li>
+    <button id="showQRCodeBtn2">CLICK for the QR-Code</button>
+    <div id="qrPopup2" class="popup2">
+        <img src="annqr.png" alt="QR-Code2" />
+    </div>
+
+    <a href="https://chat.whatsapp.com/IXqQtw8pGz680E8v2oI2cn" target="_blank">
+        <button style="background-color: #8b0000; color: #fff;">CLICK for the Link</button>
+    </a>
+	
+	
+</ul>
 
 <!-- qr code js -->
 
@@ -147,6 +162,23 @@ document.addEventListener("click", function() {
 
 // Закрытие попапа при клике на изображение (если нужно)
 document.getElementById("qrPopup").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+});
+</script>
+
+<script>
+	document.getElementById("showQRCodeBtn2").addEventListener("click", function(event) {
+    event.stopPropagation(); // Остановить событие клика от всплытия
+    document.getElementById("qrPopup2").style.display = "block"; // Показать QR код
+});
+
+// Закрытие попапа при клике вне его
+document.addEventListener("click", function() {
+    document.getElementById("qrPopup2").style.display = "none"; // Скрыть QR код
+});
+
+// Закрытие попапа при клике на изображение (если нужно)
+document.getElementById("qrPopup2").addEventListener("click", function(event) {
     event.stopPropagation(); // Остановить событие клика от всплытия
 });
 </script>
