@@ -334,6 +334,7 @@ td {
     position: relative;
     display: inline-block;
     cursor: pointer;
+	font-size: 0.8em;
 }
 
 .popup9 {
