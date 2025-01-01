@@ -19,7 +19,7 @@ header {
 }
 
 #logo {
-    width: 50px;
+    width: 80px;
     height: auto;
 }
 
@@ -328,5 +328,35 @@ td {
     transition: background-color 0.3s;
         }
 		
+/*thanks */
+
+.mw0 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+	font-size: 0.72em;
+}
+
+.popup9 {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the text */
+    left: 50%;
+    margin-left: -100px; /* Center the popup */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mw0:hover .popup9 {
+    visibility: visible;
+    opacity: 1;
+}
 		
 

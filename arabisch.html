@@ -1,9 +1,42 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة المعلومات</title>
+    <title>صفحة بالعربية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        .warning-text {
+            font-weight: bold;
+            color: red;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +44,7 @@
 <header>
     <img id="logo" src="logo.png" alt="الشعار" href="index.html">
     <nav>
-        <a href="englisch.html">معلومات</a>
+        <a href="arabisch.html">معلومات</a>
         <a href="links.html">روابط</a>
         <select class="language-select" onchange="location = this.value;">
             <option value="language.html">اللغة</option>
@@ -61,104 +94,92 @@
             .catch(error => console.error('خطأ:', error));
     </script>
 
-<h2>1. المتطلبات الفنية</h2>
-<ul>
-    <li>لتوصيل جهازك مباشرة في المنفذ الصحيح للشبكة على الجدار، يجب أن يحتوي جهازك على منفذ إيثيرنت. يمكن شراء كابل الشبكة من الـcompref إذا كان متاحًا (5 متر للطول بسعر 4€)</li>
-    <li>الأجهزة التي لا تحتوي على منفذ إيثيرنت تحتاج إلى محول USB إلى LAN لاستخدامها بكابل. يمكن شراء المحول من الـcompref إذا كان متاحًا ويكلف 6€.</li>
-    <li>لا يوجد Wi-Fi عام في السكن باستثناء ذلك في الردهة (Pano). إذا كنت ترغب في الاتصال بالإنترنت عبر Wi-Fi في غرفتك، يجب عليك شراء جهاز راوتر. يمكن شراؤه من الـcompref إذا كان متاحًا ويكلف 20€</li>
-	<li>تذكر: الاتصال <b style="color: orange;">السلكي</b> هو <b style="color: orange;">أسرع</b> وأكثر <b style="color: orange;">استقرارًا</b>.</li>
-</ul>
+    <h2>1. المتطلبات الفنية</h2>
+    <ul>
+        <li>لتوصيل جهازك مباشرة في المنفذ الصحيح للشبكة على الجدار، يجب أن يحتوي جهازك على منفذ إيثيرنت. يمكن شراء كابل الشبكة من الـcompref إذا كان متاحًا (5 متر بسعر 4€).</li>
+        <li>الأجهزة التي لا تحتوي على منفذ إيثيرنت تحتاج إلى محول USB إلى LAN لاستخدامها بكابل. يمكن شراء المحول من الـcompref إذا كان متاحًا ويكلف 6€.</li>
+        <li>لا يوجد Wi-Fi عام في السكن باستثناء ذلك في الردهة (Pano). إذا كنت ترغب في الاتصال بالإنترنت عبر Wi-Fi في غرفتك، يجب عليك شراء جهاز راوتر. يمكن شراؤه من الـcompref إذا كان متاحًا ويكلف 20€.</li>
+        <li>تذكر: الاتصال <b style="color: orange;">السلكي</b> هو <b style="color: orange;">أسرع</b> وأكثر <b style="color: orange;">استقرارًا</b>.</li>
+    </ul>
 
-<h2>2. عملية التسجيل</h2>
-<ul>
-    <li>لتسجيل جهازك (حاسوب محمول، حاسوب مكتبي، راوتر، Xbox، PS، إلخ) يجب عليك التواصل مع الـcompref خلال ساعات العمل.</li>
-    <h3 style="text-align: center; text-decoration: underline; color: red;">انتبه!</h3>
-    <li>من المحتمل أن لا تعمل أجهزة الـDSL! يمكن تسجيل نقاط الوصول (التي تحتوي على منفذ واحد للشبكة من الخلف)، ولكننا بحاجة إلى <b style="color: orange;">تسجيل جميع</b> أجهزتك.</li>
-</ul>
+    <h2>2. عملية التسجيل</h2>
+    <ul>
+        <li>لتسجيل جهازك (حاسوب محمول، حاسوب مكتبي، راوتر، Xbox، PS، إلخ) يجب عليك التواصل مع الـcompref خلال ساعات العمل.</li>
+        <h3 style="text-align: center; text-decoration: underline; color: red;">انتبه!</h3>
+        <li>من المحتمل أن لا تعمل أجهزة الـDSL! يمكن تسجيل نقاط الوصول (التي تحتوي على منفذ واحد للشبكة من الخلف)، ولكننا بحاجة إلى <b style="color: orange;">تسجيل جميع</b> أجهزتك.</li>
+    </ul>
 
-<h2>3. بعد التسجيل</h2>
-<ul>
-    <li>إذا كنت متصلًا مباشرة بمنفذ الجدار، قم بتعيين جهازك للحصول على عنوان IP تلقائيًا (DHCP - عادةً ما يكون هذا الإعداد الافتراضي).</li>
-	<li>يرجى تعيين إعدادات DNS إلى الإعدادات الافتراضية. إعدادات DNS المخصصة <b style="color: orange">لن تعمل</b>!</li>
-    <li>إذا أصيب جهاز الكمبيوتر الخاص بك، قد يتم حظرك من الشبكة. في هذه الحالة، يرجى الاتصال بالـcompref.</li>
-    <li>لدينا حد تحميل قدره 40GB خلال 24 ساعة و 80GB خلال 72 ساعة. في <b style="color: orange;">الغرف المشتركة</b>، يتم <b style="color: orange;">مشاركة</b> هذا الحد مع زميلك في الغرفة!!</li>
-    <li>لتجنب زيادة المرور على الشبكة، يجب عليك إيقاف النسخ الاحتياطية التلقائية. كما يمكن أن يتسبب مرور البيانات الزائد في أنشطة مثل: البث عبر Twitch أو Discord، مشاهدة البثوث غير القانونية، واستخدام التورنت. إذا تجاوزت الحد المسموح به، سيتم حظر الإنترنت لمدة 72 ساعة! يمكنك التحقق من تحميلك على <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> في قسم "حسابي".</li>
-    <li><b class="warning-text">الـCOMPREF <span style="color: red;">لا يمكنه</span> فك الحظر عنك في حالة المرور الزائد على الشبكة!!!</b></li>
-</ul>
+    <h2>3. بعد التسجيل</h2>
+    <ul>
+        <li>إذا كنت متصلًا مباشرة بمنفذ الجدار، قم بتعيين جهازك للحصول على عنوان IP تلقائيًا (DHCP - عادةً ما يكون هذا الإعداد الافتراضي).</li>
+        <li>يرجى تعيين إعدادات DNS إلى الإعدادات الافتراضية. إعدادات DNS المخصصة <b style="color: orange">لن تعمل</b>!</li>
+        <li>إذا أصيب جهاز الكمبيوتر الخاص بك، قد يتم حظرك من الشبكة. في هذه الحالة، يرجى الاتصال بالـcompref.</li>
+        <li>لدينا حد تحميل قدره 40GB خلال 24 ساعة و80GB خلال 72 ساعة. في <b style="color: orange;">الغرف المشتركة</b>، يتم <b style="color: orange;">مشاركة</b> هذا الحد مع زميلك في الغرفة!</li>
+        <li>لتجنب زيادة المرور على الشبكة، يجب عليك إيقاف النسخ الاحتياطية التلقائية. كما يمكن أن يتسبب مرور البيانات الزائد في أنشطة مثل: البث عبر Twitch أو Discord، مشاهدة البثوث غير القانونية، واستخدام التورنت. إذا تجاوزت الحد المسموح به، سيتم حظر الإنترنت لمدة 72 ساعة! يمكنك التحقق من تحميلك على <a href="http://www.panorama.sth.ac.at/">http://www.panorama.sth.ac.at/</a> في قسم "حسابي".</li>
+        <li><b class="warning-text">الـCOMPREF <span style="color: red;">لا يمكنه</span> فك الحظر عنك في حالة المرور الزائد على الشبكة!!!</b></li>
+    </ul>
 
-<h3 style="text-align: center; text-decoration: underline; color: red;">كيفية توصيل جهاز راوتر</h3>
-<ul>
-    <li>في غرفتك، يرجى توصيل <b style="color: orange;">كلاً من</b> كابل الطاقة وكابل الشبكة في الجزء الخلفي من جهاز الراوتر. يجب توصيل كابل الشبكة في المنفذ <b style="color:#0088FF;">الأزرق</b> من جهاز الراوتر.</li>
-    <li>قم بتوصيل محول الطاقة الخاص بالراوتر في منفذ الطاقة. يجب توصيل كابل الشبكة في أحد منفذي الشبكة في الجدار. <b style="color: orange">هناك منفذ واحد فقط يعمل!</b> يجب أن يكون المنفذ الصحيح <b style="color: orange;">مُعَلَّمًا</b> برقم غرفتك. إذا لم يكن هناك ملصق، فغالبًا سيكون المنفذ الأيسر.</li>
-    <li>إذا تم التوصيل بشكل صحيح، يجب أن تكون الإضاءة الأمامية للراوتر باللون الأخضر، <b style="color: orange">وليس</b> باللون البرتقالي أو الأحمر.</li>
-    <li>يمكنك العثور على اسم الشبكة وكلمة المرور الخاصة بك في أسفل جهاز الراوتر.</li>
-	<li><b style="color: orange">يرجى</b> عدم إعادة ضبط جهاز الراوتر أو تغيير أي إعدادات. <b style="color: orange">الإنترنت الخاص بك لن يصبح أسرع!</b>
-</ul>
+    <h3 style="text-align: center; text-decoration: underline; color: red;">كيفية توصيل جهاز راوتر</h3>
+    <ul>
+        <li>في غرفتك، يرجى توصيل <b style="color: orange;">كلاً من</b> كابل الطاقة وكابل الشبكة في الجزء الخلفي من جهاز الراوتر. يجب توصيل كابل الشبكة في المنفذ <b style="color:#0088FF;">الأزرق</b> من جهاز الراوتر.</li>
+        <li>قم بتوصيل محول الطاقة الخاص بالراوتر في منفذ الطاقة. يجب توصيل كابل الشبكة في أحد منافذ الشبكة في الجدار. <b style="color: orange">هناك منفذ واحد فقط يعمل!</b> يجب أن يكون المنفذ الصحيح <b style="color: orange;">مُعَلَّمًا</b> برقم غرفتك. إذا لم يكن هناك ملصق، فغالبًا سيكون المنفذ الأيسر.</li>
+        <li>إذا تم التوصيل بشكل صحيح، يجب أن تكون الإضاءة الأمامية للراوتر باللون الأخضر، <b style="color: orange">وليس</b> باللون البرتقالي أو الأحمر.</li>
+        <li>يمكنك العثور على اسم الشبكة وكلمة المرور الخاصة بك في أسفل جهاز الراوتر.</li>
+        <li><b style="color: orange">يرجى</b> عدم إعادة ضبط جهاز الراوتر أو تغيير أي إعدادات. <b style="color: orange">الإنترنت الخاص بك لن يصبح أسرع!</b></li>
+    </ul>
 
-<h2>4. الدفع</h2>
-<ul>
-    <li>رسوم الصيانة الشهرية: 5€</li>
-    <li>الدفع متاح <b style="color: orange;">فقط نقدًا</b> في مكتبنا (من الممكن الدفع لعدة أشهر مقدمًا ويوصى بذلك =))</li>
-    <li>تنتهي صلاحية الدفع في اليوم الخامس من كل شهر الساعة 
-	<span class="time-item">
-        <span class="time" data-12h="12:00 PM">12:00 PM</span> 
-        (إذا لم يتم الدفع مقدمًا). 
-        <button class="normal-time" onclick="toggleTimeFormat(this)">Normal Time</button>
-    </span>
-	</li>
-	<li><b style="color:orange">للمبتدئين:</b> الوصول إلى الإنترنت مجاني من <b style="color:orange">5</b> المقبل حتى يوم التسجيل.</li>
-	
-	
-</ul>
+    <h2>4. الدفع</h2>
+    <ul>
+        <li>رسوم الصيانة الشهرية: 5€</li>
+        <li>الدفع متاح <b style="color: orange;">فقط نقدًا</b> في مكتبنا (من الممكن الدفع لعدة أشهر مقدمًا ويوصى بذلك =))</li>
+        <li>تنتهي صلاحية الدفع في اليوم الخامس من كل شهر الساعة <span class="time-item"><span class="time" data-12h="12:00 PM">12:00 PM</span> (إذا لم يتم الدفع مقدمًا). <button class="normal-time" onclick="toggleTimeFormat(this)">Normal Time</button></span></li>
+        <li><b style="color:orange">للمبتدئين:</b> الوصول إلى الإنترنت مجاني من <b style="color:orange">5</b> المقبل حتى يوم التسجيل.</li>
+    </ul>
 
-<h2>5. الاتصال</h2>
-<ul>
-    <li>البريد الإلكتروني: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
-    <li>ساعات العمل: تُعلن بانتظام على بابنا، في مجموعة WhatsApp الخاصة بنا (الروابط يمكن العثور عليها هنا وفي الباب) وعلى هذا الموقع.</li>
-</ul>
+    <h2>5. الاتصال</h2>
+    <ul>
+        <li>البريد الإلكتروني: <a href="mailto:compref@panorama.sth.ac.at">compref@panorama.sth.ac.at</a></li>
+        <li>ساعات العمل: تُعلن بانتظام على بابنا، في مجموعة WhatsApp الخاصة بنا (الروابط يمكن العثور عليها هنا وفي الباب) وعلى هذا الموقع.</li>
+    </ul>
 
-<h2>6. التواصل</h2>
-<ul>
-    <li>تم إنشاء مجموعة دردشة على WhatsApp من قبل الطلاب للطلاب. <br />
-        يرجى الانضمام إلينا لتبادل المعلومات، شراء الأشياء، مشاركة مواقع أجهزة التحكم، والمشاركة في الأنشطة الأخرى =) </li>
-  <li>الدردشة</li>
-    <button id="showQRCodeBtn">انقر لعرض رمز الاستجابة السريعة</button>
-    <div id="qrPopup" class="popup">
-        <img src="qrlink.png" alt="رمز الاستجابة السريعة" />
-    </div>
-
-    <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
-        <button style="background-color: #8b0000; color: #fff;">انقر للرابط</button>
-    </a>
-</ul>
-<ul>
-<li>الإعلانات</li>
-    <button id="showQRCodeBtn2">انقر لعرض رمز الاستجابة السريعة</button>
-    <div id="qrPopup2" class="popup2">
-        <img src="annqr.png" alt="رمز الاستجابة السريعة 2" />
-    </div>
-
-    <a href="https://chat.whatsapp.com/IXqQtw8pGz680E8v2oI2cn" target="_blank">
-        <button style="background-color: #8b0000; color: #fff;">انقر للرابط</button>
-    </a>
-</ul>
-
+    <h2>6. التواصل</h2>
+    <ul>
+        <li>تم إنشاء مجموعة دردشة على WhatsApp من قبل الطلاب للطلاب. <br>يرجى الانضمام إلينا لتبادل المعلومات، شراء الأشياء، مشاركة مواقع أجهزة التحكم، والمشاركة في الأنشطة الأخرى =)</li>
+        <li>الدردشة</li>
+        <button id="showQRCodeBtn">انقر لعرض رمز الاستجابة السريعة</button>
+        <div id="qrPopup" class="popup">
+            <img src="qrlink.png" alt="رمز الاستجابة السريعة">
+        </div>
+        <a href="https://chat.whatsapp.com/H9IFtAalJeqHDng3MTJMV4" target="_blank">
+            <button style="background-color: #8b0000; color: #fff;">انقر للرابط</button>
+        </a>
+    </ul>
+    <ul>
+        <li>الإعلانات</li>
+        <button id="showQRCodeBtn2">انقر لعرض رمز الاستجابة السريعة</button>
+        <div id="qrPopup2" class="popup2">
+            <img src="annqr.png" alt="رمز الاستجابة السريعة 2">
+        </div>
+        <a href="https://chat.whatsapp.com/IXqQtw8pGz680E8v2oI2cn" target="_blank">
+            <button style="background-color: #8b0000; color: #fff;">انقر للرابط</button>
+        </a>
+    </ul>
 <!-- qr code js -->
 
 <script>
     document.getElementById("showQRCodeBtn").addEventListener("click", function(event) {
-        event.stopPropagation(); // منع الحدث من الفقاعة
-        document.getElementById("qrPopup").style.display = "block"; // عرض رمز الاستجابة السريعة
+        event.stopPropagation(); 
+        document.getElementById("qrPopup").style.display = "block"; 
     });
 
-    // إغلاق النافذة المنبثقة عند النقر في الخارج
+   
     document.addEventListener("click", function() {
-        document.getElementById("qrPopup").style.display = "none"; // إخفاء رمز الاستجابة السريعة
+        document.getElementById("qrPopup").style.display = "none"; 
     });
 
-    // إغلاق النافذة المنبثقة عند النقر على الصورة (إذا لزم الأمر)
+    
     document.getElementById("qrPopup").addEventListener("click", function(event) {
-        event.stopPropagation(); // منع الحدث من الفقاعة
+        event.stopPropagation(); 
     });
 </script>
 
@@ -233,7 +254,8 @@ document.getElementById("qrPopup2").addEventListener("click", function(event) {
 
 <footer style="display: flex; justify-content: space-between; align-items: center; padding: 7px;">
     <p style="margin: 0;"><a href="http://www.campusbrigittenau.at">www.campusbrigittenau.at</a></p>
-    <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88">digga8</a></p>
+	<div style="margin: 0;" class="mw0">credits <div class="popup9">Special thanks to Ahmed for the translation fix.</div></div>
+    <p class="mwl" style="margin: 0;">With ♡ by <a href="https://www.instagram.com/hassrede88" target="_blank" style="text-decoration: none;">digga8</a></p>
 </footer>
 
 </body>
